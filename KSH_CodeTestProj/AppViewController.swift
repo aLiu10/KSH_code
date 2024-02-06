@@ -13,6 +13,7 @@ import ProgressHUD
 
 class AppViewController: UIViewController,UISearchBarDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    let section1 = MyCodeTest.shared
     private let viewModel = AppListViewModel()
     private let disposeBag = DisposeBag()
     
