@@ -17,7 +17,7 @@
 		60B5AACA2B6F8A0D008897B6 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B5AAC92B6F8A0D008897B6 /* APIManager.swift */; };
 		60B5AACC2B6F8A92008897B6 /* AppListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B5AACB2B6F8A92008897B6 /* AppListViewModel.swift */; };
 		60B5AACE2B6F8BBE008897B6 /* AppTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B5AACD2B6F8BBE008897B6 /* AppTableViewCell.swift */; };
-		60B5AAD02B6F90E5008897B6 /* AppStoreItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B5AACF2B6F90E5008897B6 /* AppStoreItem.swift */; };
+		60D8E03D2B727DB300F05578 /* AppStoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D8E03C2B727DB300F05578 /* AppStoreModel.swift */; };
 		EA0C12E18AB1207BEFEF3117 /* libPods-KSH_CodeTestProj.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BEF7044EEC3AEDF4EC9BBC83 /* libPods-KSH_CodeTestProj.a */; };
 /* End PBXBuildFile section */
 
@@ -34,7 +34,7 @@
 		60B5AAC92B6F8A0D008897B6 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		60B5AACB2B6F8A92008897B6 /* AppListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppListViewModel.swift; sourceTree = "<group>"; };
 		60B5AACD2B6F8BBE008897B6 /* AppTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTableViewCell.swift; sourceTree = "<group>"; };
-		60B5AACF2B6F90E5008897B6 /* AppStoreItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreItem.swift; sourceTree = "<group>"; };
+		60D8E03C2B727DB300F05578 /* AppStoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreModel.swift; sourceTree = "<group>"; };
 		9984F5C624F262AB6BFF6627 /* Pods-KSH_CodeTestProj.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KSH_CodeTestProj.release.xcconfig"; path = "Target Support Files/Pods-KSH_CodeTestProj/Pods-KSH_CodeTestProj.release.xcconfig"; sourceTree = "<group>"; };
 		BEF7044EEC3AEDF4EC9BBC83 /* libPods-KSH_CodeTestProj.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KSH_CodeTestProj.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -89,7 +89,7 @@
 				600469752B6EBBFE001C979E /* Preview Content */,
 				60B5AABD2B6F8145008897B6 /* NetworkService.swift */,
 				60B5AAC92B6F8A0D008897B6 /* APIManager.swift */,
-				60B5AACF2B6F90E5008897B6 /* AppStoreItem.swift */,
+				60D8E03C2B727DB300F05578 /* AppStoreModel.swift */,
 				60B5AACB2B6F8A92008897B6 /* AppListViewModel.swift */,
 				60B5AACD2B6F8BBE008897B6 /* AppTableViewCell.swift */,
 				60B5AAC32B6F8164008897B6 /* AppViewController.swift */,
@@ -218,11 +218,11 @@
 				60B5AAC42B6F8164008897B6 /* AppViewController.swift in Sources */,
 				60B5AACE2B6F8BBE008897B6 /* AppTableViewCell.swift in Sources */,
 				600469712B6EBBF9001C979E /* ContentView.swift in Sources */,
+				60D8E03D2B727DB300F05578 /* AppStoreModel.swift in Sources */,
 				60B5AACA2B6F8A0D008897B6 /* APIManager.swift in Sources */,
 				60B5AABE2B6F8145008897B6 /* NetworkService.swift in Sources */,
 				6004696F2B6EBBF9001C979E /* KSH_CodeTestProjApp.swift in Sources */,
 				60B5AACC2B6F8A92008897B6 /* AppListViewModel.swift in Sources */,
-				60B5AAD02B6F90E5008897B6 /* AppStoreItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

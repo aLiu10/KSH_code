@@ -1,5 +1,5 @@
 //
-//  AppStoreItem.swift
+//  AppStoreModel.swift
 //  KSH_CodeTestProj
 //
 //  Created by lyl on 2024/2/4.
@@ -42,7 +42,7 @@ var wrapperType: String?
 //    var contentAdvisoryRating: String?
 //    var longDescription: String?
     var hasITunesExtras: Bool = false
-struct AppStoreItem: Codable {
+struct AppStoreModel: Codable {
     let trackName: String
     let artistName: String
     let trackPrice: Double?

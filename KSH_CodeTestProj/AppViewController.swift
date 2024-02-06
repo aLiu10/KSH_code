@@ -240,7 +240,7 @@ class AppViewController: UIViewController,UISearchBarDelegate, UIPickerViewDeleg
             .disposed(by: disposeBag)
         
         // 处理 tableView item 选择
-        tableView.rx.modelSelected(AppStoreItem.self)
+        tableView.rx.modelSelected(AppStoreModel.self)
             .subscribe(onNext: {  item in
                 
             })

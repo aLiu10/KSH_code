@@ -32,11 +32,11 @@ class AppListViewModel {
     var isLoading = PublishSubject<Bool>()//处理请求loading
     var errorMessage = PublishSubject<String>()//处理错误信息展示
     
-    var items: Observable<[AppStoreItem]> {
+    var items: Observable<[AppStoreModel]> {
         return itemsSubject.asObservable()
     }
     
-    private let itemsSubject = BehaviorSubject<[AppStoreItem]>(value: [])
+    private let itemsSubject = BehaviorSubject<[AppStoreModel]>(value: [])
     private let disposeBag = DisposeBag()
     
     init() {
@@ -58,7 +58,7 @@ class AppListViewModel {
             .disposed(by: disposeBag)
         
         sortType
-            .flatMapLatest { sortType -> Observable<[AppStoreItem]> in
+            .flatMapLatest { sortType -> Observable<[AppStoreModel]> in
                 let currentItems = (try? self.itemsSubject.value()) ?? []
                 let sortedItems = self.sortItems(items: currentItems, by: sortType)
                 return Observable.just(sortedItems)
@@ -66,7 +66,7 @@ class AppListViewModel {
             .bind(to: itemsSubject)
             .disposed(by: disposeBag)
         filterCriteria
-            .flatMapLatest { criteria -> Observable<[AppStoreItem]> in
+            .flatMapLatest { criteria -> Observable<[AppStoreModel]> in
                 let currentItems = (try? self.itemsSubject.value()) ?? []
                 let sortedItems = self.filterItems(items: currentItems, by: criteria)
                 return Observable.just(sortedItems)
@@ -75,7 +75,7 @@ class AppListViewModel {
             .disposed(by: disposeBag)
     }
     
-    private func fetchAndProcessApps(searchTerm: String, sortType: SortType, filterCriteria: FilterCriteria) -> Observable<[AppStoreItem]> {
+    private func fetchAndProcessApps(searchTerm: String, sortType: SortType, filterCriteria: FilterCriteria) -> Observable<[AppStoreModel]> {
         return self.searchApps(searchTerm: searchTerm)
             .map { items in
                 self.filterItems(items: items, by: filterCriteria)
@@ -85,7 +85,7 @@ class AppListViewModel {
             }
     }
     //搜索请求
-    private  func searchApps(searchTerm: String) -> Observable<[AppStoreItem]> {
+    private  func searchApps(searchTerm: String) -> Observable<[AppStoreModel]> {
         return Observable.create { observer in
             self.isLoading.onNext(true)
             APIManager().searchApps(searchTerm: searchTerm) { result in
@@ -104,7 +104,7 @@ class AppListViewModel {
     }
     
     //排序
-    private func sortItems(items: [AppStoreItem], by sortType: SortType) -> [AppStoreItem] {
+    private func sortItems(items: [AppStoreModel], by sortType: SortType) -> [AppStoreModel] {
         switch sortType {
         case .name:
             return items.sorted(by: { $0.trackName < $1.trackName })
@@ -116,7 +116,7 @@ class AppListViewModel {
         }
     }
     
-    private func filterItems(items: [AppStoreItem], by criteria: FilterCriteria) -> [AppStoreItem] {
+    private func filterItems(items: [AppStoreModel], by criteria: FilterCriteria) -> [AppStoreModel] {
         return items.filter { item in
             //处理价格过滤
             let isWithinPriceRange = (criteria.minPrice == nil || item.trackPrice ?? 0 >= criteria.minPrice!) &&

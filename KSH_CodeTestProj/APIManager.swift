@@ -10,7 +10,7 @@ import Alamofire
 
 struct SearchResponse: Codable {
     let resultCount: Int
-    let results: [AppStoreItem]
+    let results: [AppStoreModel]
 }
 
 extension String {
@@ -37,7 +37,7 @@ extension String {
 
 class APIManager {
     
-    func searchApps(searchTerm: String, completion: @escaping (Result<[AppStoreItem], Error>) -> Void) {
+    func searchApps(searchTerm: String, completion: @escaping (Result<[AppStoreModel], Error>) -> Void) {
         NetworkService.shared.fetchApps(searchTerm: searchTerm) { result in
             switch result {
             case .success(let data):

@@ -63,7 +63,7 @@ class AppTableViewCell: UITableViewCell {
         priceLabel.font = UIFont.systemFont(ofSize: 14)
     }
     
-    func configureWith(_ item: AppStoreItem) {
+    func configureWith(_ item: AppStoreModel) {
         if let imageUrl = item.artworkUrl100{
             itemImageView.loadImage(fromURL: imageUrl)
         }
