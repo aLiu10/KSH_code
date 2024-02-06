@@ -1,0 +1,6 @@
+module Pods_KSH_CodeTestProj {
+  umbrella header "Pods-KSH_CodeTestProj-umbrella.h"
+
+  export *
+  module * { export * }
+}
